@@ -1,0 +1,11 @@
+{
+    "name": "habits",
+    "version": "1.0.0",
+    "description": "Progress of Habits",
+    "main": "index.html",
+    "scripts": {
+        "scss": "node-sass --watch scss -o css"
+    },
+    "author": "Dmitriy Papiyants",
+    "license": "ISC"
+}

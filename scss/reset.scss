@@ -1,0 +1,32 @@
+html,
+body,
+ul,
+ol {
+    margin: 0;
+    padding: 0;
+}
+ol,
+ul,
+menu {
+    list-style: none;
+}
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+a {
+    cursor: revert;
+}
+button {
+    cursor: pointer;
+    background: none;
+    border: 0;
+}
+img {
+    max-inline-size: 100%;
+    max-block-size: 100%;
+}
+::placeholder {
+    color: unset;
+}

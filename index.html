@@ -4,13 +4,69 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/main.css">
     <script src="./js/app.js" defer></script>
-    <title>Document</title>
+    <title>Progress of Habits</title>
 </head>
 
 <body>
-
+    <header class="header">
+        <div class="header__logo"><img src="./img/logo.svg" alt="Robomix"></div>
+        <div class="header__phone"><a href="tel:+34644675910"><span class="header__phone_prefix">+34</span>644 675
+                910</a></div>
+    </header>
+    <section class="app">
+        <div class="app__panel">
+            <div class="menu">
+                <nav class="menu__list">
+                    <button class="menu__item menu__item_active">
+                        <img src="/img/water.svg" alt="Drink water">
+                    </button>
+                    <button class="menu__item">
+                        <img src="/img/water.svg" alt="Drink water">
+                    </button>
+                    <button class="menu__item">
+                        <img src="/img/water.svg" alt="Drink water">
+                    </button>
+                </nav>
+                <button class="menu__add-btn">
+                    <img src="/img/add.svg" alt="Add habbit">
+                </button>
+            </div>
+        </div>
+        <div class="app__content">
+            <section class="title-line">
+                <h1 class="title-line__title">Drink water</h1>
+                <div class="title-line__progress">
+                    <div class="progress">
+                        <div class="progress__text">
+                            <div class="progress__name">Progress</div>
+                            <div class="progress__percent">50%</div>
+                        </div>
+                        <div class="progress__bar">
+                            <div class="progress__line"> </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <main>
+                <div class="habbit">
+                    <div class="habbit__item">
+                        <div class="habbit__day">Day 1</div>
+                        <div class="habbit__comment">First dat is always hard!</div>
+                        <button class="habbit__delete"><img src="/img/trash.svg" alt="Delete day 1"></button>
+                    </div>
+                    <div class="habbit__item">
+                        <div class="habbit__day">Day 2</div>
+                        <div class="habbit__comment">
+                            <input class="input__icon" type="text" placeholder="Comment...">
+                        </div>
+                        <button class="habbit__delete"><img src="/img/add.svg" alt="Delete day 1"></button>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </section>
 </body>
 
 </html>
