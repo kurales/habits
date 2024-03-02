@@ -65,11 +65,27 @@ function rerenderHead(activeHabit) {
     page.head.progressLine.setAttribute('style', `width: ${progress}%`);
 }
 
+function rerenderContent(activeHabit) {
+    page.content.daysWrapper.innerHTML = '';
+    for (const i in activeHabit.days) {
+        const div = document.createElement('div');
+        div.classList.add('habit__item');
+        div.innerHTML = `<div class="habit__day">Day ${Number(i) + 1}</div>
+            <div class="habit__comment">${activeHabit.days[i].comment}</div>
+            <button class="habit__delete"><img src="/img/trash.svg" alt="Delete day ${
+                i + 1
+            }"></button>`;
+        page.content.daysWrapper.append(div);
+        page.content.nextDay.innerHTML = `Day ${activeHabit.days.length + 1}`;
+    }
+}
+
 function rerender(activeHabitId) {
     const activeHabit = habits.find((habit) => habit.id === activeHabitId);
     if (!activeHabit) return;
     rerenderMenu(activeHabit);
     rerenderHead(activeHabit);
+    rerenderContent(activeHabit);
 }
 
 /* INIT */
