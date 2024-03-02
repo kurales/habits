@@ -55,10 +55,21 @@ function rerenderMenu(activeHabit) {
     }
 }
 
+function rerenderHead(activeHabit) {
+    page.head.h1.innerText = activeHabit.name;
+    const progress =
+        activeHabit.days.length / activeHabit.target >= 1
+            ? 100
+            : (activeHabit.days.length / activeHabit.target) * 100;
+    page.head.progressPrecent.innerText = progress.toFixed(0) + '%';
+    page.head.progressLine.setAttribute('style', `width: ${progress}%`);
+}
+
 function rerender(activeHabitId) {
     const activeHabit = habits.find((habit) => habit.id === activeHabitId);
     if (!activeHabit) return;
     rerenderMenu(activeHabit);
+    rerenderHead(activeHabit);
 }
 
 /* INIT */
