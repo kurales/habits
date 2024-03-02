@@ -1,0 +1,42 @@
+[
+    {
+        "id": 1,
+        "icon": "water",
+        "name": "Drink water",
+        "target": 10,
+        "days": [
+            { "comment": "Firs day is always hard" },
+            { "comment": "Second day is more easy" }
+        ]
+    },
+    {
+        "id": 2,
+        "icon": "gym",
+        "name": "GO to the GYM",
+        "target": 5,
+        "days": [
+            { "comment": "It's hard work)" },
+            { "comment": "My body is crying(" }
+        ]
+    },
+    {
+        "id": 3,
+        "icon": "apple",
+        "name": "Eat healthy food",
+        "target": 5,
+        "days": [
+            { "comment": "It's a good idea" },
+            { "comment": "Today I'm feeling good!" }
+        ]
+    },
+    {
+        "id": 4,
+        "icon": "weigher",
+        "name": "Loose weight",
+        "target": 5,
+        "days": [
+            { "comment": "My weight for today is 91kg" },
+            { "comment": "The same(" }
+        ]
+    }
+]

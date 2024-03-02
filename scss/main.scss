@@ -79,51 +79,51 @@ body {
     @include flexible();
     align-items: flex-start;
     &__panel {
+        @include flexible();
+        flex-direction: column;
+        justify-content: space-between;
         flex: 0 0 60px;
         height: 100%;
         background-color: rgba(255, 255, 255, 0.3);
         border-radius: 0 0 0 20px;
-        .menu {
-            height: 100%;
-            width: 60px;
+        .menu__list {
             @include flexible();
             flex-direction: column;
-            gap: 40px;
-            padding-bottom: 20px;
-            &__list {
+            gap: 5px;
+            .menu__item {
                 @include flexible();
-                flex-direction: column;
-                gap: 5px;
-                .menu__item {
-                    @include flexible();
-                    background-color: $color-hover;
-                    width: 60px;
-                    height: 60px;
-                    &:hover,
-                    &_active {
-                        background-color: $color-accent;
-                    }
-                    img {
-                        width: 30px;
-                        transition: all 0.3s;
-                    }
-                    &:hover img,
-                    &_active img {
-                        filter: brightness(0) invert(1);
-                        transform: scale(1.1);
-                    }
+                background-color: $color-hover;
+                width: 60px;
+                height: 60px;
+                &:hover,
+                &_active {
+                    background-color: $color-accent;
                 }
-            }
-            &__add-btn {
                 img {
                     width: 30px;
-                    opacity: 0.5;
                     transition: all 0.3s;
                 }
-                &:hover img {
+                &:hover img,
+                &_active img {
                     filter: brightness(0) invert(1);
-                    opacity: 1;
+                    transform: scale(1.1);
                 }
+            }
+        }
+
+        .add-btn {
+            @include flexible();
+            width: 100%;
+            padding: 20px 0;
+            img {
+                width: 30px;
+                height: 30px;
+                opacity: 0.5;
+                transition: all 0.3s;
+            }
+            &:hover img {
+                filter: brightness(0) invert(1);
+                opacity: 1;
             }
         }
     }
@@ -172,7 +172,6 @@ body {
                 &__line {
                     position: absolute;
                     height: 100%;
-                    width: 50%;
                     background-color: $color-accent;
                     border-radius: 3px;
                     transition: all 0.3s;
@@ -181,11 +180,15 @@ body {
         }
         main {
             padding: 40px 0;
-        }
-        .habbit {
             @include flexible();
             flex-direction: column;
             gap: 10px;
+        }
+        .habit {
+            @include flexible();
+            flex-direction: column;
+            gap: 10px;
+            width: 100%;
             &__item {
                 @include flexible();
                 width: 100%;

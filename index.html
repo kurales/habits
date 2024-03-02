@@ -17,22 +17,9 @@
     </header>
     <section class="app">
         <div class="app__panel">
-            <div class="menu">
-                <nav class="menu__list">
-                    <button class="menu__item menu__item_active">
-                        <img src="/img/water.svg" alt="Drink water">
-                    </button>
-                    <button class="menu__item">
-                        <img src="/img/water.svg" alt="Drink water">
-                    </button>
-                    <button class="menu__item">
-                        <img src="/img/water.svg" alt="Drink water">
-                    </button>
-                </nav>
-                <button class="menu__add-btn">
-                    <img src="/img/add.svg" alt="Add habbit">
-                </button>
-            </div>
+            <nav class="menu__list">
+            </nav>
+            <button class="add-btn"><img src="./img/add.svg" alt="Add habit"></button>
         </div>
         <div class="app__content">
             <section class="title-line">
@@ -50,21 +37,16 @@
                 </div>
             </section>
             <main>
-                <div class="habbit">
-                    <div class="habbit__item">
-                        <div class="habbit__day">Day 1</div>
-                        <div class="habbit__comment">First dat is always hard!</div>
-                        <button class="habbit__delete"><img src="/img/trash.svg" alt="Delete day 1"></button>
-                    </div>
-                    <div class="habbit__item">
-                        <div class="habbit__day">Day 2</div>
-                        <div class="habbit__comment">
-                            <input class="input__icon" type="text" placeholder="Comment...">
-                        </div>
-                        <button class="habbit__delete"><img src="/img/add.svg" alt="Delete day 1"></button>
-                    </div>
+                <div class="habit"></div>
+                <div class="habit__item habit__add">
+                    <div class="habit__day"></div>
+                    <form class="habit__comment">
+                        <input class="input__icon" type="text" placeholder="Comment...">
+                    </form>
+                    <button class="habit__delete" type="submit"><img src="/img/add.svg" alt="Delete day 1"></button>
                 </div>
-            </main>
+        </div>
+        </main>
         </div>
     </section>
 </body>
