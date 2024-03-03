@@ -73,9 +73,9 @@ function rerenderContent(activeHabit) {
         div.classList.add('habit__item');
         div.innerHTML = `<div class="habit__day">Day ${Number(i) + 1}</div>
             <div class="habit__comment">${activeHabit.days[i].comment}</div>
-            <button class="habit__delete"><img src="/img/trash.svg" alt="Delete day ${
-                i + 1
-            }"></button>`;
+            <button onclick="deleteDay(${i})" class="habit__delete"><img src="/img/trash.svg" alt="Delete day ${
+            i + 1
+        }"></button>`;
         page.content.daysWrapper.append(div);
         page.content.nextDay.innerHTML = `Day ${activeHabit.days.length + 1}`;
     }
@@ -110,6 +110,23 @@ function addDays(event) {
         return habit;
     });
     event.target['comment'].value = '';
+    rerender(globalHabitId);
+    saveData();
+}
+
+/* DELETE DAY */
+
+function deleteDay(index) {
+    habits = habits.map((habit) => {
+        if (habit.id === globalHabitId) {
+            habit.days.splice(index, 1);
+            return {
+                ...habit,
+                days: habit.days,
+            };
+        }
+        return habit;
+    });
     rerender(globalHabitId);
     saveData();
 }
