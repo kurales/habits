@@ -265,3 +265,118 @@ body {
         }
     }
 }
+
+.cover {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(255, 255, 255, 0.5);
+    &_hidden {
+        // display: none;
+    }
+    .popup {
+        max-width: 320px;
+        width: 100%;
+        padding: 30px;
+        background-color: #1e1e1e;
+        border-radius: 20px;
+        @include boxShadow();
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        h2 {
+            margin: 0;
+            position: relative;
+            &::after {
+                content: '';
+                width: 100px;
+                height: 2px;
+                background-color: $color-hover;
+                border-radius: 3px;
+                position: absolute;
+                left: 50%;
+                transform: translateX(-50%);
+                bottom: -5px;
+            }
+        }
+        .icon-select {
+            @include flexible();
+            gap: 10px;
+            flex-wrap: wrap;
+            .icon {
+                @include flexible();
+                border-radius: 5px;
+                padding: 5px;
+                &_active {
+                    background-color: $color-accent;
+                }
+            }
+            img {
+                width: 30px;
+                filter: brightness(0) invert(1);
+                transition: all 0.3s;
+            }
+            &:hover img,
+            &_active img {
+                filter: brightness(0) invert(1);
+                transform: scale(1.1);
+            }
+        }
+        .popup__form {
+            @include flexible();
+            width: 80%;
+            flex-direction: column;
+            gap: 10px;
+            input {
+                width: 100%;
+                padding: 5px 20px;
+                font-style: italic;
+                &:focus-visible {
+                    outline: none;
+                }
+            }
+            .button {
+                margin-top: 20px;
+                padding: 10px 20px;
+                color: #fff;
+                text-transform: uppercase;
+                font-weight: bold;
+                font-size: 12px;
+                letter-spacing: 1px;
+                background-color: $color-accent;
+                border-radius: 10px;
+                @include boxShadow();
+                transition: all 0.3s;
+                &:hover {
+                    color: #000;
+                    background-color: #fff;
+                }
+            }
+        }
+        .close {
+            padding: 0;
+            position: absolute;
+            top: -5px;
+            right: -5px;
+            width: 30px;
+            height: 30px;
+            transform: rotate(45deg);
+            transition: all 0.3s;
+            &:hover {
+                transform: rotate(135deg);
+            }
+            img {
+                width: 30px;
+                filter: brightness(0) invert(1);
+                transition: all 0.3s;
+            }
+        }
+    }
+}
