@@ -2,6 +2,7 @@
 
 let habits = [];
 const HABIT_KEY = 'HABIT_KEY';
+let globalHabitId;
 
 /* PAGE */
 
@@ -81,11 +82,36 @@ function rerenderContent(activeHabit) {
 }
 
 function rerender(activeHabitId) {
+    globalHabitId = activeHabitId;
     const activeHabit = habits.find((habit) => habit.id === activeHabitId);
     if (!activeHabit) return;
     rerenderMenu(activeHabit);
     rerenderHead(activeHabit);
     rerenderContent(activeHabit);
+}
+
+/* ADD DAYS */
+
+function addDays(event) {
+    event.preventDefault();
+    const data = new FormData(event.target);
+    const comment = data.get('comment');
+    event.target['comment'].classList.remove('error');
+    if (!comment) {
+        event.target['comment'].classList.add('error');
+    }
+    habits = habits.map((habit) => {
+        if (habit.id === globalHabitId) {
+            return {
+                ...habit,
+                days: habit.days.concat([{ comment }]),
+            };
+        }
+        return habit;
+    });
+    event.target['comment'].value = '';
+    rerender(globalHabitId);
+    saveData();
 }
 
 /* INIT */

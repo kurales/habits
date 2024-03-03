@@ -38,12 +38,13 @@
             </section>
             <main>
                 <div class="habit"></div>
-                <div class="habit__item habit__add">
+                <div class="habit__add">
                     <div class="habit__day"></div>
-                    <form class="habit__comment">
-                        <input class="input__icon" type="text" placeholder="Comment...">
+                    <form class="habit__form" onsubmit="addDays(event)">
+                        <input name="comment" class="input__icon" type="text" placeholder="Comment...">
+                        <button class="habit__delete" type="submit"><img src="/img/add.svg" alt="Delete day 1"></button>
                     </form>
-                    <button class="habit__delete" type="submit"><img src="/img/add.svg" alt="Delete day 1"></button>
+
                 </div>
         </div>
         </main>
