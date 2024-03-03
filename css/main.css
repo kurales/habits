@@ -267,12 +267,16 @@ body {
           outline: 0; }
 
 .cover {
+  opacity: 1;
   position: fixed;
   top: 0;
   bottom: 0;
   left: 0;
   right: 0;
   background: rgba(255, 255, 255, 0.5); }
+  .cover_hidden {
+    display: none;
+    opacity: 0; }
   .cover .popup {
     max-width: 320px;
     width: 100%;

@@ -17,6 +17,10 @@ const page = {
         daysWrapper: document.querySelector('.habit'),
         nextDay: document.querySelector('.habit__add .habit__day'),
     },
+    popup: {
+        cover: document.querySelector('.cover'),
+        iconFild: document.querySelector('.popup__form input[name="icon"]'),
+    },
 };
 
 /* LOAD & SAVE */
@@ -129,6 +133,21 @@ function deleteDay(index) {
     });
     rerender(globalHabitId);
     saveData();
+}
+
+/* POPUP TOGGLE */
+
+function popupToggle() {
+    page.popup.cover.classList.toggle('cover_hidden');
+}
+
+/* POPUP INPUT ICON */
+
+function setIcon(context, icon) {
+    page.popup.iconFild.value = icon;
+    const activeIcon = document.querySelector('.icon.icon_active');
+    activeIcon.classList.remove('icon_active');
+    context.classList.add('icon_active');
 }
 
 /* INIT */

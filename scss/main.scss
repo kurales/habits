@@ -267,6 +267,7 @@ body {
 }
 
 .cover {
+    opacity: 1;
     position: fixed;
     top: 0;
     bottom: 0;
@@ -274,7 +275,8 @@ body {
     right: 0;
     background: rgba(255, 255, 255, 0.5);
     &_hidden {
-        // display: none;
+        display: none;
+        opacity: 0;
     }
     .popup {
         max-width: 320px;

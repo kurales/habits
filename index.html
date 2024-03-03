@@ -19,7 +19,7 @@
         <div class="app__panel">
             <nav class="menu__list">
             </nav>
-            <button class="add-btn"><img src="./img/add.svg" alt="Add habit"></button>
+            <button class="add-btn" onclick="popupToggle()"><img src="./img/add.svg" alt="Add habit"></button>
         </div>
         <div class="app__content">
             <section class="title-line">
@@ -55,25 +55,26 @@
             <h2>New habit</h2>
             <div class="icon-lable">Icons</div>
             <div class="icon-select">
-                <button class="icon icon_active">
+                <button class="icon icon_active" onclick="setIcon(this, 'water')">
                     <img src="./img/water.svg" alt="Water">
                 </button>
-                <button class="icon">
+                <button class="icon" onclick="setIcon(this, 'gym')">
                     <img src="./img/gym.svg" alt="Gym">
                 </button>
-                <button class="icon">
+                <button class="icon" onclick="setIcon(this, 'apple')">
                     <img src="./img/apple.svg" alt="Heathy food">
                 </button>
-                <button class="icon">
+                <button class="icon" onclick="setIcon(this, 'weigher')">
                     <img src="./img/weigher.svg" alt="Control weight">
                 </button>
             </div>
             <form class="popup__form">
                 <input type="text" name="name" placeholder="Enter name...">
+                <input type="text" name="icon" hidden>
                 <input type="number" name="target" placeholder="Enter target...">
                 <button class="button" type="submit">Add habit</button>
             </form>
-            <button class="close"><img src="./img/add.svg" alt="Close"></button>
+            <button class="close" onclick="popupToggle()"><img src="./img/add.svg" alt="Close"></button>
         </div>
     </div>
 </body>
