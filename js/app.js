@@ -35,6 +35,33 @@ function saveData() {
     localStorage.setItem(HABIT_KEY, JSON.stringify(habits));
 }
 
+/* UTILS */
+
+function resetForm(form, filds) {
+    for (const fild of filds) {
+        form[fild].value = '';
+    }
+}
+
+function validateForm(form, filds) {
+    const formData = new FormData(form);
+    const res = {};
+    for (const fild of filds) {
+        const fildValue = formData.get(fild);
+        form[fild].classList.remove('error');
+        if (!fildValue) {
+            form[fild].classList.add('error');
+        }
+        res[fild] = fildValue;
+    }
+    let isValid = true;
+    for (const fild of filds) {
+        if (!res[fild]) isValid = false;
+        if (!isValid) return;
+        return res;
+    }
+}
+
 /* RENDER */
 
 function rerenderMenu(activeHabit) {
@@ -98,12 +125,6 @@ function rerender(activeHabitId) {
 
 function addDays(event) {
     event.preventDefault();
-    const data = new FormData(event.target);
-    const comment = data.get('comment');
-    event.target['comment'].classList.remove('error');
-    if (!comment) {
-        event.target['comment'].classList.add('error');
-    }
     habits = habits.map((habit) => {
         if (habit.id === globalHabitId) {
             return {
@@ -148,6 +169,13 @@ function setIcon(context, icon) {
     const activeIcon = document.querySelector('.icon.icon_active');
     activeIcon.classList.remove('icon_active');
     context.classList.add('icon_active');
+}
+
+/* POPUP ADD HABIT */
+
+function addHabit(event) {
+    event.preventDefault();
+    const data = new FormData(event.target);
 }
 
 /* INIT */
